@@ -40,7 +40,6 @@ public class FuturoCandidatoDTO {
         return setor;
     }
 
-
     public void setSetor(Setor setor) { //importar enum
         this.setor = setor;
     }
