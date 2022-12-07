@@ -41,8 +41,8 @@ public class ClienteService {
     public Cliente atualizar(Integer idCliente, ClienteDTO dto) {
         Cliente clienteAtual = this.getCliente(idCliente);
         clienteAtual.setNome(dto.getNome());
-        clienteAtual.setEmail(dto.getEmail());
-        clienteAtual.setCpf(dto.getCpf());
+        clienteAtual.setEmail(clienteAtual.getEmail());
+        clienteAtual.setCpf(clienteAtual.getCpf());
         clienteAtual.setSenha(dto.getSenha());
         clienteAtual.setTelefone(dto.getTelefone());
 

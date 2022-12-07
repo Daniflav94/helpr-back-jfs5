@@ -55,8 +55,8 @@ public class FuncionarioService {
         Cargo cargo = this.cargoService.getCargo(dto.getIdCargo());
 
         funcionarioAtual.setNome(dto.getNome());
-        funcionarioAtual.setEmail(dto.getEmail());
-        funcionarioAtual.setCpf(dto.getCpf());
+        funcionarioAtual.setEmail(funcionarioAtual.getEmail());
+        funcionarioAtual.setCpf(funcionarioAtual.getCpf());
         funcionarioAtual.setSenha(dto.getSenha());
         funcionarioAtual.setFoto(dto.getFoto());
         funcionarioAtual.setCargo(cargo);
