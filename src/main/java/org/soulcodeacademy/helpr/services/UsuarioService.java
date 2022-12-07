@@ -29,8 +29,8 @@ public class UsuarioService {
         return this.usuarioRepository.findByNomeContaining(busca);
     }
 
-    public Perfil verificarPerfilPorEmail(String email){
-       Usuario usuario = this.usuarioRepository.findByEmail(email)
+    public Perfil verificarPerfilPorId(Integer id){
+       Usuario usuario = this.usuarioRepository.findById(id)
                .orElseThrow(() -> new RecursoNaoEncontradoError("Usuário não encontrado"));
        return usuario.getPerfil();
 
