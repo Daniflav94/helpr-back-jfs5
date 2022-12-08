@@ -1,5 +1,7 @@
 package org.soulcodeacademy.helpr.domain.dto;
 
+import org.soulcodeacademy.helpr.domain.enums.Setor;
+
 import javax.validation.constraints.NotBlank;
 
 public class FuturoCandidatoDTO {
