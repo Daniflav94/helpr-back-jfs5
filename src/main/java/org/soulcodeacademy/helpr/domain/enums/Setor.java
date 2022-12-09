@@ -9,4 +9,5 @@ public enum Setor {
     RECURSOS_HUMANOS,
     DESENVOLVIMENTO,
     SUSTENTACAO
+
 }
