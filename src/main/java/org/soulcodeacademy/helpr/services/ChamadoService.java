@@ -51,28 +51,23 @@ public class ChamadoService {
         chamadoAtual.setDescricao(dto.getDescricao());
         chamadoAtual.setCliente(cliente);
 
-        if (dto.getIdFuncionario() == null) {
-            throw new ParametrosInsuficientesError("idFuncionario obrigatório");
-        } else {
-            Funcionario funcionario = this.funcionarioService.getFuncionario(dto.getIdFuncionario());
+            if(dto.getStatus() == StatusChamado.RECEBIDO){
+                chamadoAtual.setStatus(StatusChamado.RECEBIDO);
+                chamadoAtual.setFuncionario(null);
+                chamadoAtual.setDataFechamento(null);
+            }else if(dto.getStatus() == StatusChamado.ATRIBUIDO && dto.getIdFuncionario() != null){
+                Funcionario funcionario = this.funcionarioService.getFuncionario(dto.getIdFuncionario());
+                chamadoAtual.setStatus(StatusChamado.ATRIBUIDO);
+                chamadoAtual.setFuncionario(funcionario);
+                chamadoAtual.setDataFechamento(null);
 
-            switch (dto.getStatus()) { // Escolha o valor de getStatus()
-                case RECEBIDO -> {
-                    chamadoAtual.setStatus(StatusChamado.RECEBIDO);
-                    chamadoAtual.setFuncionario(null);
-                    chamadoAtual.setDataFechamento(null);
-                }
-                case ATRIBUIDO -> {
-                    chamadoAtual.setStatus(StatusChamado.ATRIBUIDO);
-                    chamadoAtual.setFuncionario(funcionario);
-                    chamadoAtual.setDataFechamento(null);
-                }
-                case CONCLUIDO -> {
-                    chamadoAtual.setStatus(StatusChamado.CONCLUIDO);
-                    chamadoAtual.setFuncionario(funcionario);
-                    chamadoAtual.setDataFechamento(LocalDate.now());
-                }
-            }
+            }else if(dto.getStatus() == StatusChamado.CONCLUIDO){
+                Funcionario funcionario = this.funcionarioService.getFuncionario(dto.getIdFuncionario());
+                chamadoAtual.setStatus(StatusChamado.CONCLUIDO);
+                chamadoAtual.setFuncionario(funcionario);
+                chamadoAtual.setDataFechamento(LocalDate.now());
+            } else {
+                throw new ParametrosInsuficientesError("idFuncionario obrigatório");
         }
 
         return this.chamadoRepository.save(chamadoAtual);
