@@ -1,7 +1,7 @@
 package org.soulcodeacademy.helpr.security;
 
 import org.soulcodeacademy.helpr.domain.Usuario;
-import org.soulcodeacademy.helpr.security.repositories.UsuarioRepository;
+import org.soulcodeacademy.helpr.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

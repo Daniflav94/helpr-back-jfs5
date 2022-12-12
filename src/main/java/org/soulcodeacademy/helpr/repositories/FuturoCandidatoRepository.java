@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.security.repositories;
+package org.soulcodeacademy.helpr.repositories;
 
 import org.soulcodeacademy.helpr.domain.FuturoCandidato;
 import org.soulcodeacademy.helpr.domain.enums.Setor;

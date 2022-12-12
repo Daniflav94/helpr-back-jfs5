@@ -2,7 +2,7 @@ package org.soulcodeacademy.helpr.services;
 
 import org.soulcodeacademy.helpr.domain.Usuario;
 import org.soulcodeacademy.helpr.domain.enums.Perfil;
-import org.soulcodeacademy.helpr.security.repositories.UsuarioRepository;
+import org.soulcodeacademy.helpr.repositories.UsuarioRepository;
 import org.soulcodeacademy.helpr.services.errors.RecursoNaoEncontradoError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
