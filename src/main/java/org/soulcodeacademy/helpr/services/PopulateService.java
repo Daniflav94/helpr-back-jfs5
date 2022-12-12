@@ -60,10 +60,10 @@ public class PopulateService {
         // Integer id, String nome, String email, String cpf, String senha, String telefone
 
         Cliente cl1 = new Cliente(null, "José Almir", "jose.almir@gmail.com", "12659185115", encoder.encode("batata"), "011963322145");
-        Cliente cl2 = new Cliente(null, "Pedro João", "pedro@gmail.com", "37734168302", encoder.encode("batata"), "011941414141");
-        Cliente cl3 = new Cliente(null,"Emma Stone","Ema@gmail.com","95255461105", encoder.encode("batata"), "011963636363");
-        Cliente cl4 = new Cliente(null,"Camila de Lucas", "Camila@gmail.com", "21620573954", encoder.encode("batata"),"011987878787" );
-        Cliente cl5 = new Cliente(null, "Erika Hilton", "Erika@gmail.com", "87220874359", encoder.encode("batata"),"011963366556" );
+        Cliente cl2 = new Cliente(null, "Pedro João", "pedro.joão@gmail.com", "37734168302", encoder.encode("batata"), "011941414141");
+        Cliente cl3 = new Cliente(null,"Emma Stone","Emma.Stone@gmail.com","95255461105", encoder.encode("batata"), "011963636363");
+        Cliente cl4 = new Cliente(null,"Camila de Lucas", "Camila.lucas@gmail.com", "21620573954", encoder.encode("batata"),"011987878787" );
+        Cliente cl5 = new Cliente(null, "Erika Hilton", "Erika.Hilton@gmail.com", "87220874359", encoder.encode("batata"),"011963366556" );
 
         FuturoCandidato fc1 = new FuturoCandidato(null, "Diego", "diego@gmail.com", "candidato para vaga de Manutenção", Setor.MANUTENCAO);
         FuturoCandidato fc2 = new FuturoCandidato(null, "Rafael", "rafael@gmail.com", "candidato para vaga de RH", Setor.RECURSOS_HUMANOS);
@@ -79,17 +79,14 @@ public class PopulateService {
 
         Chamado ch3 = new Chamado(null,"Desbloqueio de usuário","Senha bloqueada por excesso de tentativas" );
         ch3.setCliente(cl5);
-        ch3.setFuncionario(f7);
         ch3.setStatus(StatusChamado.RECEBIDO);
 
         Chamado ch4 = new Chamado(null,"Sistema operacional", "Instalação do sistema operacional Windows" );
         ch4.setCliente(cl5);
-        ch4.setFuncionario(f6);
         ch4.setStatus(StatusChamado.RECEBIDO);
 
         Chamado ch5 = new Chamado(null,"Sistema operacional", "Instalação do sistema operacional Linux" );
         ch5.setCliente(cl3);
-        ch5.setFuncionario(f5);
         ch5.setStatus(StatusChamado.RECEBIDO);
 
         Chamado ch6 = new Chamado(null,"Antivírus off", "Cadastrar chave de segurança no antivírus da máquina" );
