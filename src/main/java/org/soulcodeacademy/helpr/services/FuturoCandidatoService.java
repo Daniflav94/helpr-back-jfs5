@@ -3,13 +3,12 @@ package org.soulcodeacademy.helpr.services;
 import org.soulcodeacademy.helpr.domain.FuturoCandidato;
 import org.soulcodeacademy.helpr.domain.dto.FuturoCandidatoDTO;
 import org.soulcodeacademy.helpr.domain.enums.Setor;
-import org.soulcodeacademy.helpr.repositories.FuturoCandidatoRepository;
+import org.soulcodeacademy.helpr.security.repositories.FuturoCandidatoRepository;
 import org.soulcodeacademy.helpr.services.errors.RecursoNaoEncontradoError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service // instanciar automaticamente minha classe

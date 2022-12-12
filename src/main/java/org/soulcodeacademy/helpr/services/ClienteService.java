@@ -2,7 +2,7 @@ package org.soulcodeacademy.helpr.services;
 
 import org.soulcodeacademy.helpr.domain.Cliente;
 import org.soulcodeacademy.helpr.domain.dto.ClienteDTO;
-import org.soulcodeacademy.helpr.repositories.ClienteRepository;
+import org.soulcodeacademy.helpr.security.repositories.ClienteRepository;
 import org.soulcodeacademy.helpr.services.errors.RecursoNaoEncontradoError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

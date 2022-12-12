@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.repositories;
+package org.soulcodeacademy.helpr.security.repositories;
 
 import org.soulcodeacademy.helpr.domain.Cargo;
 import org.springframework.data.jpa.repository.JpaRepository;
