@@ -66,6 +66,15 @@ public class ChamadoService {
                 chamadoAtual.setStatus(StatusChamado.CONCLUIDO);
                 chamadoAtual.setFuncionario(funcionario);
                 chamadoAtual.setDataFechamento(LocalDate.now());
+            }else if(dto.getStatus() == StatusChamado.ARQUIVADO){
+                Funcionario funcionario = this.funcionarioService.getFuncionario(dto.getIdFuncionario());
+                if(chamadoAtual.getStatus() == StatusChamado.CONCLUIDO) {
+                    chamadoAtual.setStatus(StatusChamado.ARQUIVADO);
+                    chamadoAtual.setFuncionario(chamadoAtual.getFuncionario());
+                    chamadoAtual.setDataFechamento(chamadoAtual.getDataFechamento());
+                }else{
+                    throw new RuntimeException("Não é possível arquivar um chamado com status recebido ou atribuído.");
+                }
             } else {
                 throw new ParametrosInsuficientesError("idFuncionario obrigatório");
         }
